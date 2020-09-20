@@ -53,6 +53,8 @@ app.get('/topic/create', function(request, response){
   response.send(html);
 });
  
+
+
 app.post('/topic/create_process', function(request, response){
   var post = request.body;
   var title = post.title;
