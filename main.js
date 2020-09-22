@@ -18,10 +18,10 @@ app.get('*', function(request, response, next){
   });
 });
  
- 
- 
-//route, routing
-//app.get('/', (req, res) => res.send('Hello World!'))
+//페이지 css 소스 만들기
+
+//메인
+
 app.get('/', function(request, response) { 
   var title = 'Welcome';
   var description = 'Hello, Node.js';
@@ -36,6 +36,7 @@ app.get('/', function(request, response) {
   response.send(html);
 });
  
+//제작
 app.get('/topic/create', function(request, response){
   var title = 'WEB - create';
   var list = template.list(request.list);
@@ -99,7 +100,7 @@ app.post('/topic/update_process', function(request, response){
     })
   });
 });
- 
+ //삭제
 app.post('/topic/delete_process', function(request, response){
   var post = request.body;
   var id = post.id;
@@ -136,11 +137,7 @@ app.get('/topic/:pageId', function(request, response, next) {
 });
  
  
- 
- 
- 
- 
- 
+//예외
  
 app.use(function(req, res, next) {
   res.status(404).send('Sorry cant find that!');
